@@ -27,16 +27,9 @@ class ItemCard extends StatelessWidget {
       color: Theme.of(context).colorScheme.secondary,
       // Membuat sudut kartu melengkung.
       borderRadius: BorderRadius.circular(12),
-      
       child: InkWell(
         // Aksi ketika kartu ditekan.
         onTap: () async {
-          // Memunculkan SnackBar ketika diklik
-          ScaffoldMessenger.of(context)
-            ..hideCurrentSnackBar()
-            ..showSnackBar(SnackBar(
-                content: Text("Kamu telah menekan tombol ${item.name}!")));
-
           // Navigate ke route yang sesuai (tergantung jenis tombol)
           if (item.name == "Tambah Mood") {
             Navigator.push(
